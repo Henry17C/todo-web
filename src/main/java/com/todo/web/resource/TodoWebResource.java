@@ -38,9 +38,12 @@ public class TodoWebResource {
     public String allTodos() {
         try {
             List<TodoWithUserDto> todoList = todoRestClient.getAllTodos();
-            return todos.data("todos", todoList).render();
+            return todos.data("todos", todoList).data("userId", null).data("error", null).render();
         } catch (Exception e) {
-            return todos.data("error", "Error al cargar las tareas: " + e.getMessage()).render();
+            return todos.data("todos", List.of())
+                       .data("userId", null)
+                       .data("error", "Error al cargar las tareas: " + e.getMessage())
+                       .render();
         }
     }
     
@@ -50,9 +53,12 @@ public class TodoWebResource {
     public String todosByUser(@PathParam("userId") Long userId) {
         try {
             List<TodoWithUserDto> todoList = todoRestClient.getTodosByUserId(userId);
-            return todos.data("todos", todoList).data("userId", userId).render();
+            return todos.data("todos", todoList).data("userId", userId).data("error", null).render();
         } catch (Exception e) {
-            return todos.data("error", "Error al cargar las tareas del usuario: " + e.getMessage()).render();
+            return todos.data("todos", List.of())
+                       .data("userId", userId)
+                       .data("error", "Error al cargar las tareas del usuario: " + e.getMessage())
+                       .render();
         }
     }
 }
