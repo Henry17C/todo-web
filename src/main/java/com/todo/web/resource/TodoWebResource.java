@@ -1,7 +1,7 @@
 package com.todo.web.resource;
 
 import com.todo.web.client.TodoRestClient;
-import com.todo.web.dto.TodoWithUserDto;
+import com.todo.web.dto.TodoUserDto;
 import io.quarkus.qute.Template;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.GET;
@@ -37,7 +37,7 @@ public class TodoWebResource {
     @Produces(MediaType.TEXT_HTML)
     public String allTodos() {
         try {
-            List<TodoWithUserDto> todoList = todoRestClient.getAllTodos();
+            List<TodoUserDto> todoList = todoRestClient.getAllTodos();
             return todos.data("todos", todoList).data("userId", null).data("error", null).render();
         } catch (Exception e) {
             return todos.data("todos", List.of())
@@ -52,7 +52,7 @@ public class TodoWebResource {
     @Produces(MediaType.TEXT_HTML)
     public String todosByUser(@PathParam("userId") Long userId) {
         try {
-            List<TodoWithUserDto> todoList = todoRestClient.getTodosByUserId(userId);
+            List<TodoUserDto> todoList = todoRestClient.getTodosByUserId(userId);
             return todos.data("todos", todoList).data("userId", userId).data("error", null).render();
         } catch (Exception e) {
             return todos.data("todos", List.of())

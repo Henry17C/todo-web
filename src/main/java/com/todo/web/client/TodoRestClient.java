@@ -1,6 +1,6 @@
 package com.todo.web.client;
 
-import com.todo.web.dto.TodoWithUserDto;
+import com.todo.web.dto.TodoUserDto;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.PathParam;
@@ -13,9 +13,9 @@ import java.util.List;
 public interface TodoRestClient {
     
     @GET
-    List<TodoWithUserDto> getAllTodos();
+    List<TodoUserDto> getAllTodos();
     
     @GET
     @Path("/user/{userId}")
-    List<TodoWithUserDto> getTodosByUserId(@PathParam("userId") Long userId);
+    List<TodoUserDto> getTodosByUserId(@PathParam("userId") Long userId);
 }
