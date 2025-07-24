@@ -1,0 +1,13 @@
+dependencies {
+    implementation 'io.quarkus:quarkus-resteasy-reactive'
+    implementation 'io.quarkus:quarkus-qute'
+    implementation 'io.quarkus:quarkus-rest-client-reactive-jackson'
+    implementation 'io.quarkus:quarkus-webjars-locator'
+    implementation 'org.webjars:bootstrap:5.3.0'
+    implementation 'org.webjars:jquery:3.7.0'
+    
+    // Jakarta EE APIs
+    implementation 'jakarta.ws.rs:jakarta.ws.rs-api:3.1.0'
+    implementation 'jakarta.enterprise:jakarta.enterprise.cdi-api:4.0.1'
+    implementation 'jakarta.inject:jakarta.inject-api:2.0.1'
+}

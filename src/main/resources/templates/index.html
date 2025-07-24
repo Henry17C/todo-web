@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo App - Inicio</title>
+    <link href="/webjars/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="/">Todo App</a>
+            <div class="navbar-nav">
+                <a class="nav-link" href="/todos">Ver Todos</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-8 mx-auto">
+                <div class="card">
+                    <div class="card-header">
+                        <h1 class="text-center">Bienvenido a Todo App</h1>
+                    </div>
+                    <div class="card-body text-center">
+                        <p class="lead">Gestiona tus tareas de manera eficiente</p>
+                        <a href="/todos" class="btn btn-primary btn-lg">Ver Todas las Tareas</a>
+                    </div>
+                </div>
+                
+                <div class="card mt-4">
+                    <div class="card-header">
+                        <h3>Filtrar por Usuario</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-4 mb-2">
+                                <a href="/todos/user/1" class="btn btn-outline-primary w-100">Usuario 1</a>
+                            </div>
+                            <div class="col-md-4 mb-2">
+                                <a href="/todos/user/2" class="btn btn-outline-primary w-100">Usuario 2</a>
+                            </div>
+                            <div class="col-md-4 mb-2">
+                                <a href="/todos/user/3" class="btn btn-outline-primary w-100">Usuario 3</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/webjars/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
